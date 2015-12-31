@@ -24,7 +24,7 @@ repositories {
 	}
 	
 dependencies {
-	         compile 'com.github.ihsanbal:StreetView:1.0.0'
+	         compile 'com.github.ihsanbal:StreetView:1.0.1'
 	}
 ```
 or Maven:
@@ -37,7 +37,7 @@ or Maven:
 <dependency>
 	    <groupId>com.github.ihsanbal</groupId>
 	    <artifactId>StreetView</artifactId>
-	    <version>1.0.0</version>
+	    <version>1.0.1</version>
 </dependency>
 ```
 
