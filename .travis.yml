@@ -1,28 +1,25 @@
-language: android
-android:
-  components:
-  - tools
-  - platform-tools
-  - build-tools-22.0.1
-  - android-22
-  - extra-android-m2repository
-  - extra-android-support
-
-  licenses:
-  - 'android-sdk-license.*'
+language: java
 
 jdk:
-  - openjdk7
-  - oraclejdk7
+  - oraclejdk8
+
+after_success:
+  - .buildscript/deploy_snapshot.sh
+
+env:
+  global:
+    - secure: "M0bjPTMwinz0uXN6qjXcpyfvhz/YX9W7ty4RdV90jMU8ZJxSdGdKXRy1N0TsMO8ciOQ2fryE/FpiX+arrphnVvqUmGBh386lGvj1rhgrVqXNqlGE23cQpzHsQ0nNqTGIxnoE4dmJF3PjWoYG+B4WbFsSb3PB7sEjpLq7klqGeHk="
+    - secure: "iL5BdYAmMaEDRKxNx1d9Zxn0tfJhCzXBGUvn+p7QGeQDUSVCdCc8cXS4ePbRj0401pK20nK1OouIi0lLP+z0QpZY6RrKIEncGOZeSFPQbS/vnZ7niCYJQdXCZ/GOlYUkAW2AsQl5bzzHYbHKX/TVgTuO3iFlbyeoZZuIjD3VaiM="
+
+branches:
+  except:
+    - gh-pages
+
+notifications:
+  email: false
 
 sudo: false
 
-script: 'travis_retry ./gradlew build --parallel'
-
-after_success:
-- scripts/travis-sonatype-publish.sh
-- ./gradlew jacocoTestReport coveralls
-
 cache:
   directories:
-    - $HOME/.gradle/caches
+    - $HOME/.m2
