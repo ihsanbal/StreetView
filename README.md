@@ -8,7 +8,7 @@ Google Street View Image API Android Library
 </p>
 
 [![License](http://img.shields.io/badge/License-Apache%202-brightgreen.svg?style=flat)](https://github.com/ihsanbal/StreetView/blob/master/LICENSE)
-[![Build Status](https://travis-ci.org/ihsanbal/ObjectBee.svg?branch=master)](https://travis-ci.org/ihsanbal/StreetView)
+[![Build Status](https://travis-ci.org/ihsanbal/StreetView.svg?branch=master)](https://travis-ci.org/ihsanbal/StreetView)
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-StreetView-green.svg?style=flat)](http://android-arsenal.com/details/1/2041)
 
 
