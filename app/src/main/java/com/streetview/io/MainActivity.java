@@ -12,9 +12,17 @@ import android.view.View;
 import android.widget.ImageView;
 
 
+import com.google.android.gms.maps.model.LatLng;
+import com.squareup.okhttp.ResponseBody;
+
 import java.io.BufferedInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+
+import io.bal.ihsan.streetapi.api.base.StreetView;
+import retrofit.Callback;
+import retrofit.Response;
+import retrofit.Retrofit;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -34,7 +42,31 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                final StreetView streetView = new StreetView.Builder("AIzaSyDJwAJBnh_N5cJ0mNU9hspD9S55oJGmijo")
+                        .pitch("-0.76")
+                        .heading("80.0")
+                        .size("600x300")
+                        .build();
 
+                streetView.getStreetView(new LatLng(41.0421119, 29.0379787), new Callback<ResponseBody>() {
+                    @Override
+                    public void onResponse(Response<ResponseBody> response, Retrofit retrofit) {
+                        try {
+                            InputStream inputStream = response.body().byteStream();
+                            BufferedInputStream bufferedInputStream = new BufferedInputStream(inputStream);
+                            final Bitmap bmp = BitmapFactory.decodeStream(bufferedInputStream);
+                            streetViewContainer.setImageBitmap(bmp);
+
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Throwable t) {
+                        t.printStackTrace();
+                    }
+                });
 
             }
         });
