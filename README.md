@@ -76,7 +76,7 @@ streetView.getStreetView(new LatLng(41.0421119, 29.0379787), new CallBack() {
 
 Licence
 --------------
-Copyright [2015] [İHSAN BAL]
+Copyright [2015]() [İHSAN BAL](https://github.com/ihsanbal)
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
