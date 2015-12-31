@@ -3,8 +3,6 @@ StreetView
 
 Google Street View Image API Android Library
 
-========
-
 <p align="center">
     <img src="https://lh3.googleusercontent.com/50-i3khy6z44n6xQsiJKx6WqLWK4zeb6IyXJYW2qZJGBE_2QvWSI5an09m-H7WgMlRqQ=w300-rw" alt="Google Street View"/>
 </p>
