@@ -22,6 +22,7 @@ public class StreetView {
     private String pitch = "-0.76";
     private String heading = "151.78";
     private String size = "600x300";
+    private String fov = "90";
     private String apiKey;
 
     public StreetView(Builder builder) {
@@ -31,6 +32,8 @@ public class StreetView {
             heading = builder.heading;
         if (builder.pitch != null && !builder.pitch.equalsIgnoreCase(""))
             size = builder.size;
+        if (builder.fov != null && !builder.fov.equalsIgnoreCase(""))
+            fov = builder.fov;
         if (apiKey == null || apiKey.equalsIgnoreCase("") || apiKey.length() < 10)
             new RuntimeException("api key will not be null or wrong please check your api key and length");
         else
@@ -41,6 +44,7 @@ public class StreetView {
         private String pitch = "-0.76";
         private String heading = "151.78";
         private String size = "600x300";
+        private String fov;
 
         //Required
         private final String apiKey;
@@ -64,6 +68,11 @@ public class StreetView {
             return this;
         }
 
+        public Builder fov(String value) {
+            fov = value;
+            return this;
+        }
+
         public StreetView build() {
             return new StreetView(this);
         }
@@ -75,7 +84,7 @@ public class StreetView {
                 .baseUrl("https://maps.googleapis.com")
                 .build();
         StreetApi api = retrofit.create(StreetApi.class);
-        api.getStreetView(size, lat + "," + lng, heading, pitch, apiKey).enqueue(new Callback<ResponseBody>() {
+        api.getStreetView(size, lat + "," + lng, heading, pitch, fov, apiKey).enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Response<ResponseBody> response, Retrofit retrofit) {
                 InputStream inputStream = null;
@@ -103,7 +112,7 @@ public class StreetView {
                 .baseUrl("https://maps.googleapis.com")
                 .build();
         StreetApi api = retrofit.create(StreetApi.class);
-        api.getStreetView(size, lat + "," + lng, heading, pitch, apiKey).enqueue(new Callback<ResponseBody>() {
+        api.getStreetView(size, lat + "," + lng, heading, pitch, fov, apiKey).enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Response<ResponseBody> response, Retrofit retrofit) {
                 InputStream inputStream = null;
@@ -131,7 +140,7 @@ public class StreetView {
                 .baseUrl("https://maps.googleapis.com")
                 .build();
         StreetApi api = retrofit.create(StreetApi.class);
-        api.getStreetView(size, lat + "," + lng, heading, pitch, apiKey).enqueue(new Callback<ResponseBody>() {
+        api.getStreetView(size, lat + "," + lng, heading, pitch, fov, apiKey).enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Response<ResponseBody> response, Retrofit retrofit) {
                 InputStream inputStream = null;

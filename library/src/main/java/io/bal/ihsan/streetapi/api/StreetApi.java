@@ -13,6 +13,8 @@ import retrofit.http.Streaming;
 public interface StreetApi {
     @GET("/maps/api/streetview?")
     @Streaming
-    Call<ResponseBody> getStreetView(@Query("size") String size, @Query("location") String location, @Query("heading") String heading, @Query("pitch") String pitch, @Query("key") String key);
+    Call<ResponseBody> getStreetView(@Query("size") String size, @Query("location") String location,
+                                     @Query("heading") String heading, @Query("pitch") String pitch,
+                                     @Query("fov") String fov, @Query("key") String key);
 }
 
