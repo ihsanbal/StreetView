@@ -10,7 +10,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.google.android.gms.maps.model.LatLng;
 import com.squareup.okhttp.ResponseBody;
 
 import io.bal.ihsan.streetapi.api.base.CallBack;
@@ -42,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
                         .size("600x400")
                         .build();
 
-                streetView.getStreetView(new LatLng(41.0421119, 29.0379787), new CallBack() {
+                streetView.getStreetView(41.0421119, 29.0379787, new CallBack() {
                     @Override
                     public void onResponse(Response<ResponseBody> response, Retrofit retrofit, Bitmap bitmapStreetView) {
                         streetViewContainer.setImageBitmap(bitmapStreetView);

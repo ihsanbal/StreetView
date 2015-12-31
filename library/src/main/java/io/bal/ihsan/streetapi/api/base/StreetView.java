@@ -3,7 +3,6 @@ package io.bal.ihsan.streetapi.api.base;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 
-import com.google.android.gms.maps.model.LatLng;
 import com.squareup.okhttp.ResponseBody;
 
 import java.io.BufferedInputStream;
@@ -71,12 +70,12 @@ public class StreetView {
 
     }
 
-    public void getStreetView(LatLng location, final CallBack callBack) {
+    public void getStreetView(double lat, double lng, final CallBack callBack) {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://maps.googleapis.com")
                 .build();
         StreetApi api = retrofit.create(StreetApi.class);
-        api.getStreetView(size, location.latitude + "," + location.longitude, heading, pitch, apiKey).enqueue(new Callback<ResponseBody>() {
+        api.getStreetView(size, lat + "," + lng, heading, pitch, apiKey).enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Response<ResponseBody> response, Retrofit retrofit) {
                 InputStream inputStream = null;
@@ -99,12 +98,12 @@ public class StreetView {
         });
     }
 
-    public void getStreetView(String size, String heading, String pitch, LatLng location, final CallBack callBack) {
+    public void getStreetView(String size, String heading, String pitch, double lat, double lng, final CallBack callBack) {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://maps.googleapis.com")
                 .build();
         StreetApi api = retrofit.create(StreetApi.class);
-        api.getStreetView(size, location.latitude + "," + location.longitude, heading, pitch, apiKey).enqueue(new Callback<ResponseBody>() {
+        api.getStreetView(size, lat + "," + lng, heading, pitch, apiKey).enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Response<ResponseBody> response, Retrofit retrofit) {
                 InputStream inputStream = null;
@@ -127,12 +126,12 @@ public class StreetView {
         });
     }
 
-    public void getStreetView(String size, LatLng location, final CallBack callBack) {
+    public void getStreetView(String size, double lat, double lng, final CallBack callBack) {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://maps.googleapis.com")
                 .build();
         StreetApi api = retrofit.create(StreetApi.class);
-        api.getStreetView(size, location.latitude + "," + location.longitude, heading, pitch, apiKey).enqueue(new Callback<ResponseBody>() {
+        api.getStreetView(size, lat + "," + lng, heading, pitch, apiKey).enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Response<ResponseBody> response, Retrofit retrofit) {
                 InputStream inputStream = null;
