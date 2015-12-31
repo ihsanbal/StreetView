@@ -1,7 +1,7 @@
-ObjectBee
+StreetView
 =======
 
-A simple data transporte library
+Google Street View Image API Android Library
 
 [![License](http://img.shields.io/badge/License-Apache%202-brightgreen.svg?style=flat)](https://github.com/ihsanbal/StreetView/blob/master/LICENSE)
 [![Build Status](https://travis-ci.org/ihsanbal/ObjectBee.svg?branch=master)](https://travis-ci.org/ihsanbal/StreetView)
@@ -20,7 +20,7 @@ repositories {
 	}
 	
 dependencies {
-	         compile 'com.github.ihsanbal:StreetView:1.0'
+	         compile 'com.github.ihsanbal:StreetView:1.0.0'
 	}
 ```
 or Maven:
@@ -33,7 +33,7 @@ or Maven:
 <dependency>
 	    <groupId>com.github.ihsanbal</groupId>
 	    <artifactId>StreetView</artifactId>
-	    <version>1.0</version>
+	    <version>1.0.0</version>
 </dependency>
 ```
 
@@ -42,11 +42,23 @@ Usage
 
 ```java
 
-    final StreetView streetView = new StreetView.Builder("AIzaSyDJwAJBnh_N5cJ0mNU9hspD9S55oJGmijo")
+                StreetView streetView = new StreetView.Builder("AIzaSyDJwAJBnh_N5cJ0mNU9hspD9S55oJGmijo")
                             .pitch("-0.76")
                             .heading("80.0")
                             .size("600x400")
                             .build();
+                            
+                streetView.getStreetView(new LatLng(41.0421119, 29.0379787), new CallBack() {
+                    @Override
+                    public void onResponse(Response<ResponseBody> response, Retrofit retrofit, Bitmap bitmapStreetView) {
+                        streetViewContainer.setImageBitmap(bitmapStreetView);
+                    }
+                         
+                    @Override
+                    public void onFailure(Throwable t) {
+                        t.printStackTrace();
+                    }
+                });
 
 ```
 
