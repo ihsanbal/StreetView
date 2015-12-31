@@ -1,6 +1,6 @@
 StreetView
 =======
-Google Street View Image API Android Library
+Google Street View Image API Android Library - 
 StreetView use the [Retrofit](https://github.com/square/retrofit) 
 
 <p align="center">
