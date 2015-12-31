@@ -11,7 +11,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 
-
 import com.google.android.gms.maps.model.LatLng;
 import com.squareup.okhttp.ResponseBody;
 
@@ -45,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
                 final StreetView streetView = new StreetView.Builder("AIzaSyDJwAJBnh_N5cJ0mNU9hspD9S55oJGmijo")
                         .pitch("-0.76")
                         .heading("80.0")
-                        .size("600x300")
+                        .size("600x400")
                         .build();
 
                 streetView.getStreetView(new LatLng(41.0421119, 29.0379787), new Callback<ResponseBody>() {
@@ -67,7 +66,6 @@ public class MainActivity extends AppCompatActivity {
                         t.printStackTrace();
                     }
                 });
-
             }
         });
     }
