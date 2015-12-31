@@ -54,7 +54,7 @@ Usage
 
 ```java
 
-StreetView streetView = new StreetView.Builder("AIzaSyDJwAJBnh_N5cJ0mNU9hspD9S55oJGmijo")
+StreetView streetView = new StreetView.Builder("ApiKey")
             .pitch("-0.76")
             .heading("80.0")
             .size("600x400")
