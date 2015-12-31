@@ -1,5 +1,6 @@
 package com.streetview.io;
 
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
@@ -10,8 +11,12 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.google.android.gms.maps.model.LatLng;
+import com.squareup.okhttp.ResponseBody;
 
+import io.bal.ihsan.streetapi.api.base.CallBack;
 import io.bal.ihsan.streetapi.api.base.StreetView;
+import retrofit.Response;
+import retrofit.Retrofit;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -31,13 +36,23 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final StreetView streetView = new StreetView.Builder("AIzaSyDJwAJBnh_N5cJ0mNU9hspD9S55oJGmijo")
+                StreetView streetView = new StreetView.Builder("AIzaSyDJwAJBnh_N5cJ0mNU9hspD9S55oJGmijo")
                         .pitch("-0.76")
                         .heading("80.0")
                         .size("600x400")
                         .build();
 
-                streetView.getStreetView(new LatLng(41.0421119, 29.0379787), null);
+                streetView.getStreetView(new LatLng(41.0421119, 29.0379787), new CallBack() {
+                    @Override
+                    public void onResponse(Response<ResponseBody> response, Retrofit retrofit, Bitmap bitmapStreetView) {
+                        streetViewContainer.setImageBitmap(bitmapStreetView);
+                    }
+
+                    @Override
+                    public void onFailure(Throwable t) {
+                        t.printStackTrace();
+                    }
+                });
             }
         });
     }
