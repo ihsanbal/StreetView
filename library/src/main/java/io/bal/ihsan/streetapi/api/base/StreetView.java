@@ -1,10 +1,18 @@
 package io.bal.ihsan.streetapi.api.base;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+
 import com.google.android.gms.maps.model.LatLng;
 import com.squareup.okhttp.ResponseBody;
 
+import java.io.BufferedInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+
 import io.bal.ihsan.streetapi.api.StreetApi;
 import retrofit.Callback;
+import retrofit.Response;
 import retrofit.Retrofit;
 
 /**
@@ -63,28 +71,88 @@ public class StreetView {
 
     }
 
-    public void getStreetView(LatLng location, final Callback<ResponseBody> callBack) {
+    public void getStreetView(LatLng location, final CallBack callBack) {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://maps.googleapis.com")
                 .build();
         StreetApi api = retrofit.create(StreetApi.class);
-        api.getStreetView(size, location.latitude + "," + location.longitude, heading, pitch, apiKey).enqueue(callBack);
+        api.getStreetView(size, location.latitude + "," + location.longitude, heading, pitch, apiKey).enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Response<ResponseBody> response, Retrofit retrofit) {
+                InputStream inputStream = null;
+                try {
+                    inputStream = response.body().byteStream();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    callBack.onFailure(e);
+                } finally {
+                    BufferedInputStream bufferedInputStream = new BufferedInputStream(inputStream);
+                    final Bitmap bmp = BitmapFactory.decodeStream(bufferedInputStream);
+                    callBack.onResponse(response, retrofit, bmp);
+                }
+            }
+
+            @Override
+            public void onFailure(Throwable t) {
+                callBack.onFailure(t);
+            }
+        });
     }
 
-    public void getStreetView(String size, String heading, String pitch, LatLng location, final Callback<ResponseBody> callBack) {
+    public void getStreetView(String size, String heading, String pitch, LatLng location, final CallBack callBack) {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://maps.googleapis.com")
                 .build();
         StreetApi api = retrofit.create(StreetApi.class);
-        api.getStreetView(size, location.latitude + "," + location.longitude, heading, pitch, apiKey).enqueue(callBack);
+        api.getStreetView(size, location.latitude + "," + location.longitude, heading, pitch, apiKey).enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Response<ResponseBody> response, Retrofit retrofit) {
+                InputStream inputStream = null;
+                try {
+                    inputStream = response.body().byteStream();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    callBack.onFailure(e);
+                } finally {
+                    BufferedInputStream bufferedInputStream = new BufferedInputStream(inputStream);
+                    final Bitmap bmp = BitmapFactory.decodeStream(bufferedInputStream);
+                    callBack.onResponse(response, retrofit, bmp);
+                }
+            }
+
+            @Override
+            public void onFailure(Throwable t) {
+                callBack.onFailure(t);
+            }
+        });
     }
 
-    public void getStreetView(String size, LatLng location, final Callback<ResponseBody> callBack) {
+    public void getStreetView(String size, LatLng location, final CallBack callBack) {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://maps.googleapis.com")
                 .build();
         StreetApi api = retrofit.create(StreetApi.class);
-        api.getStreetView(size, location.latitude + "," + location.longitude, heading, pitch, apiKey).enqueue(callBack);
+        api.getStreetView(size, location.latitude + "," + location.longitude, heading, pitch, apiKey).enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Response<ResponseBody> response, Retrofit retrofit) {
+                InputStream inputStream = null;
+                try {
+                    inputStream = response.body().byteStream();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    callBack.onFailure(e);
+                } finally {
+                    BufferedInputStream bufferedInputStream = new BufferedInputStream(inputStream);
+                    final Bitmap bmp = BitmapFactory.decodeStream(bufferedInputStream);
+                    callBack.onResponse(response, retrofit, bmp);
+                }
+            }
+
+            @Override
+            public void onFailure(Throwable t) {
+                callBack.onFailure(t);
+            }
+        });
     }
 
 }
