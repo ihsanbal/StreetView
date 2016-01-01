@@ -67,7 +67,7 @@ StreetView streetView = new StreetView.Builder("ApiKey")
             .fov("90")
             .build();
                             
-streetView.getStreetView(new LatLng(41.0421119, 29.0379787), new CallBack() {
+streetView.getStreetView(41.0421119, 29.0379787, new CallBack() {
     @Override
     public void onResponse(Response<ResponseBody> response, Retrofit retrofit, Bitmap bitmapStreetView) {
         streetViewContainer.setImageBitmap(bitmapStreetView);
