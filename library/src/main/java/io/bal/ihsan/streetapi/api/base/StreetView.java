@@ -53,7 +53,7 @@ import retrofit.Retrofit;
  * Created by Admin on 31/12/15.
  */
 public class StreetView {
-
+    //Default values
     private String pitch = "-0.76";
     private String heading = "180.0";
     private String size = "600x300";
@@ -76,6 +76,7 @@ public class StreetView {
     }
 
     public static class Builder {
+        //Optional
         private String pitch = "0";
         private String heading = "151.78";
         private String size = "600x400";
