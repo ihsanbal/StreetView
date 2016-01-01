@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
                         .pitch("-0.76")
                         .heading("80.0")
                         .size("600x450")
+                        .fov("90")
                         .build();
 
                 streetView.getStreetView(41.0421119, 29.0379787, new CallBack() {
