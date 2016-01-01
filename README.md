@@ -10,7 +10,13 @@ StreetView use the [Retrofit](https://github.com/square/retrofit)
 [![License](http://img.shields.io/badge/License-Apache%202-brightgreen.svg?style=flat)](https://github.com/ihsanbal/StreetView/blob/master/LICENSE)
 [![Build Status](https://travis-ci.org/ihsanbal/StreetView.svg?branch=master)](https://travis-ci.org/ihsanbal/StreetView)
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-StreetView-green.svg?style=flat)](http://android-arsenal.com/details/1/2041)
-
+MinSdk Support
+--------
+```groovy
+defaultConfig {
+        minSdkVersion 9
+    }
+```
 
 Download
 --------
@@ -58,6 +64,7 @@ StreetView streetView = new StreetView.Builder("ApiKey")
             .pitch("-0.76")
             .heading("80.0")
             .size("600x400")
+            .fov("90")
             .build();
                             
 streetView.getStreetView(new LatLng(41.0421119, 29.0379787), new CallBack() {
