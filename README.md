@@ -34,7 +34,7 @@ StreetView streetView = new StreetView.Builder("ApiKey")
 streetView.getStreetView(41.0421119, 29.0379787, new CallBack() {
     @Override
     public void onResponse(Response<ResponseBody> response, Retrofit retrofit, Bitmap bitmapStreetView) {
-        //TODO : Stream image from response or use bitmapStreetView bitmat
+        //TODO : Stream image from response or use bitmapStreetView bitmap
     }
                          
     @Override
