@@ -84,11 +84,11 @@ Pic form [istanbul](https://www.google.com.tr/maps/place/%C4%B0stanbul/@41.02881
 
 Know More About Street View Image API
 -------------------------------------
-* [Developer's Guide](https://developers.google.com/maps/documentation/streetview/intro) | https://developers.google.com/maps/documentation/streetview/intro
+* [Developer's Guide](https://developers.google.com/maps/documentation/streetview/intro)
 
-* [Get A Key And Signature](https://developers.google.com/maps/documentation/streetview/intro) | https://developers.google.com/maps/documentation/streetview/get-api-key
+* [Get A Key And Signature](https://developers.google.com/maps/documentation/streetview/intro)
 
-* [Usage Limits](https://developers.google.com/maps/documentation/streetview/usage-limits) | https://developers.google.com/maps/documentation/streetview/usage-limits
+* [Usage Limits](https://developers.google.com/maps/documentation/streetview/usage-limits)
 
 
 Licence
