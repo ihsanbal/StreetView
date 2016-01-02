@@ -7,6 +7,8 @@ StreetView use the [Retrofit](https://github.com/square/retrofit)
     <img src="https://lh3.googleusercontent.com/50-i3khy6z44n6xQsiJKx6WqLWK4zeb6IyXJYW2qZJGBE_2QvWSI5an09m-H7WgMlRqQ=w300-rw" alt="Google Street View" height="240" width="240"/>
 </p>
 
+
+
 [![License](http://img.shields.io/badge/License-Apache%202-brightgreen.svg?style=flat)](https://github.com/ihsanbal/StreetView/blob/master/LICENSE)
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-StreetView-green.svg?style=flat)](http://android-arsenal.com/details/1/2972)
 MinSdk Support
@@ -15,6 +17,32 @@ MinSdk Support
 defaultConfig {
         minSdkVersion 9
     }
+```
+
+Usage
+--------
+
+```java
+
+StreetView streetView = new StreetView.Builder("ApiKey")
+            .pitch("-0.76")
+            .heading("80.0")
+            .size("600x400")
+            .fov("90")
+            .build();
+                            
+streetView.getStreetView(41.0421119, 29.0379787, new CallBack() {
+    @Override
+    public void onResponse(Response<ResponseBody> response, Retrofit retrofit, Bitmap bitmapStreetView) {
+        streetViewContainer.setImageBitmap(bitmapStreetView);
+    }
+                         
+    @Override
+    public void onFailure(Throwable t) {
+        t.printStackTrace();
+    }
+});
+
 ```
 
 Download
@@ -54,31 +82,14 @@ Pic form [istanbul](https://www.google.com.tr/maps/place/%C4%B0stanbul/@41.02881
     <img src="https://github.com/ihsanbal/StreetView/blob/master/images/device-istanbul_view.png" alt="İSTANBUL" height="700" width="420"/>
 </p>
 
-Usage
---------
+Know More About Street View Image API
+-------------------------------------
+* [Developer's Guide](https://developers.google.com/maps/documentation/streetview/intro) | https://developers.google.com/maps/documentation/streetview/intro
 
-```java
+* [Get A Key And Signature](https://developers.google.com/maps/documentation/streetview/intro) | https://developers.google.com/maps/documentation/streetview/get-api-key
 
-StreetView streetView = new StreetView.Builder("ApiKey")
-            .pitch("-0.76")
-            .heading("80.0")
-            .size("600x400")
-            .fov("90")
-            .build();
-                            
-streetView.getStreetView(41.0421119, 29.0379787, new CallBack() {
-    @Override
-    public void onResponse(Response<ResponseBody> response, Retrofit retrofit, Bitmap bitmapStreetView) {
-        streetViewContainer.setImageBitmap(bitmapStreetView);
-    }
-                         
-    @Override
-    public void onFailure(Throwable t) {
-        t.printStackTrace();
-    }
-});
+* [Usage Limits](https://developers.google.com/maps/documentation/streetview/usage-limits) | https://developers.google.com/maps/documentation/streetview/usage-limits
 
-```
 
 Licence
 --------------
