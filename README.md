@@ -1,4 +1,4 @@
-StreetView
+StreetView [![Release](https://img.shields.io/github/release/ihsanbal/StreetView.svg?label=Jitpack)](https://jitpack.io/#ihsanbal/StreetView)
 =======
 Google Street View Image API Android Library - 
 StreetView use the [Retrofit](https://github.com/square/retrofit) 
