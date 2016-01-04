@@ -11,6 +11,9 @@ StreetView use the [Retrofit](https://github.com/square/retrofit)
 
 [![License](http://img.shields.io/badge/License-Apache%202-brightgreen.svg?style=flat)](https://github.com/ihsanbal/StreetView/blob/master/LICENSE)
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-StreetView-green.svg?style=flat)](http://android-arsenal.com/details/1/2972)
+### Version
+2.0.0
+
 MinSdk Support
 --------
 ```groovy
@@ -84,11 +87,11 @@ Pic form [istanbul](https://www.google.com.tr/maps/place/%C4%B0stanbul/@41.02881
 
 Know More About Street View Image API
 -------------------------------------
-* [Developer's Guide](https://developers.google.com/maps/documentation/streetview/intro)
+>* [Developer's Guide](https://developers.google.com/maps/documentation/streetview/intro)
 
-* [Get A Key And Signature](https://developers.google.com/maps/documentation/streetview/intro)
+>* [Get A Key And Signature](https://developers.google.com/maps/documentation/streetview/intro)
 
-* [Usage Limits](https://developers.google.com/maps/documentation/streetview/usage-limits)
+>* [Usage Limits](https://developers.google.com/maps/documentation/streetview/usage-limits)
 
 
 Licence
