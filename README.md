@@ -12,7 +12,7 @@ StreetView use the [Retrofit](https://github.com/square/retrofit)
 [![License](http://img.shields.io/badge/License-Apache%202-brightgreen.svg?style=flat)](https://github.com/ihsanbal/StreetView/blob/master/LICENSE)
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-StreetView-green.svg?style=flat)](http://android-arsenal.com/details/1/2972)
 ### Version
-2.0.0
+#[2.0.0](https://github.com/ihsanbal/StreetView/releases/tag/2.0.0)
 
 MinSdk Support
 --------
