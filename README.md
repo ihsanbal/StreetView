@@ -80,7 +80,7 @@ or Maven:
 Pic form [istanbul](https://www.google.com.tr/maps/place/%C4%B0stanbul/@41.02881,28.946502,3a,75y,90t/data=!3m8!1e2!3m6!1s87258476!2e1!3e10!6s%2F%2Flh6.googleusercontent.com%2Fproxy%2FJOnyZ62VmmGhlqtu5FwscwAxSc9rCB0ptWdxKyF47Cs9wpPRZ6U8rfLgweSv3eU8sZsKK-9SOGISndy3eyX44SbQwBSC-w%3Dw139-h86!7i4704!8i2900!4m2!3m1!1s0x14caa7040068086b:0xe1ccfe98bc01b0d0!6m1!1e1?hl=tr)
 
 <p align="center">
-    <img src="https://github.com/ihsanbal/StreetView/blob/master/images/device-istanbul_view.png" alt="İSTANBUL" height="700" width="420"/>
+    <img src="https://github.com/ihsanbal/StreetView/blob/master/images/device-istanbul_view.png" alt="İSTANBUL" />
 </p>
 
 Know More About Street View Image API
