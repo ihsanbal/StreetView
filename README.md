@@ -7,19 +7,10 @@ StreetView use the [Retrofit](https://github.com/square/retrofit)
     <img src="https://lh3.googleusercontent.com/50-i3khy6z44n6xQsiJKx6WqLWK4zeb6IyXJYW2qZJGBE_2QvWSI5an09m-H7WgMlRqQ=w300-rw" alt="Google Street View" height="240" width="240"/>
 </p>
 
-[![License](http://img.shields.io/badge/License-Apache%202-brightgreen.svg?style=flat)](https://github.com/ihsanbal/StreetView/blob/master/LICENSE)
-[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-StreetView-green.svg?style=flat)](http://android-arsenal.com/details/1/2972)
-
-### Version
-#[2.0.0](https://github.com/ihsanbal/StreetView/releases/tag/2.0.0)
-
-MinSdk Support
---------
-```groovy
-defaultConfig {
-        minSdkVersion 9
-    }
-```
+[![License](http://img.shields.io/badge/License-Apache%202-brightgreen.svg?style=flat-square)](https://github.com/ihsanbal/StreetView/blob/master/LICENSE)
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-StreetView-green.svg?style=flat-square)](http://android-arsenal.com/details/1/2972)
+[![API](https://img.shields.io/badge/API-9%2B-brightgreen.svg?style=flat-square)](https://android-arsenal.com/api?level=9)
+[![Version](https://img.shields.io/badge/Version-2.0.0-orange.svg?style=flat-square)](https://github.com/ihsanbal/StreetView/releases/tag/2.0.0)
 
 Usage
 --------
