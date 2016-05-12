@@ -42,24 +42,8 @@ streetView.getStreetView(41.0421119, 29.0379787, new CallBack() {
 Update app build.gradle with
 ```
 ext {
-    compileSdkVersion = 23
-    buildToolsVersion = '23.0.2'
-    targetSdkVersion = 23
-    minSdkVersion = 9
-    versionCode = 1
-    versionName = "1.0.0"
-    retrofitLastLibVersion = "2.0.0-beta2"
+    retrofitLastLibVersion = "2.0.0-beta2" //Retrofit last version
 }
-```
-And use defacult config like tihs project build.gradle
-```
-defaultConfig {
-        applicationId "com.your.applicationid" //Your application Id
-        minSdkVersion rootProject.ext.minSdkVersion as Integer //Your application minimum sdk version
-        targetSdkVersion rootProject.ext.targetSdkVersion as Integer Your application target sdk version
-        versionCode rootProject.ext.versionCode as Integer //Your application version code
-        versionName rootProject.ext.versionName as String //Your application version name
-    }
 ```
 
 Download
